@@ -1,12 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>webpack starterkit</title>
-</head>
-<body>
-  <h1>webpack starter</h1>
-  <p>✨ A lightweight foundation for your next webpack based frontend project.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="../src/img/url_icon.jpg" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/swiper/dist/css/swiper.min.css"
+    />
+    <title>Wirless Media Test</title>
+  </head>
+  <body>
+    <div class="container">
+      <header id="header">
+        <img class="logo" src="../src/img/logo.png" alt="logo" />
+        <nav class="navigation">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a class="home" target="_blank" href="#home">home</a
+              ><span>/</span>
+            </li>
+            <li class="nav-item">
+              <a class="about-us" target="_blank" href="#about-us">about us</a
+              ><span>/</span>
+            </li>
+            <li class="nav-item">
+              <a class="our-work" target="_blank" href="#our-work">our work</a
+              ><span>/</span>
+            </li>
+            <li class="nav-item">
+              <a class="contact" target="_blank" href="#contact">contact</a>
+            </li>
+          </ul>
+          <span class="search-btn"><i class="fas fa-search"></i></span>
+        </nav>
+      </header>
+      <div class="search-input-div">
+        <input class="search-input" name="search-input" type="text" />
+      </div>
+      <div class="border-div"></div>
+    </div>
+    <div class="container">
+      <main id="swiper-section">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <img
+                  src="../src/img/slider/slider_connections_icon.png"
+                  alt="connections"
+                />
+                <div class="text">lorem ipsum dolor sit</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <img
+                  src="../src/img/slider/slider_connections_icon.png"
+                  alt="connections"
+                />
+                <div class="text">Lorem ipsum dolor sit amet.</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <img
+                  src="../src/img/slider/slider_connections_icon.png"
+                  alt="connections"
+                />
+                <div class="text">Lorem ipsum dolor sit amet.</div>
+              </div>
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>

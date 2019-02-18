@@ -1,7 +1,6 @@
 import Swiper from "swiper/dist/js/swiper.min.js";
 import colors from "../styles/global_vars";
 
-console.log("colors:", colors);
 export default class App {
   constructor() {
     this._search = false;

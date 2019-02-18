@@ -8,7 +8,8 @@ export default {
   title: "#757575",
   headerText: "#a1a3a6",
   sectionContentText: "#959595",
-  sectionPicture: "#9d9d9c",
+  $sectionPicture: "#9d9d9c",
+  $sectionPictureBg: "#e9e9e9",
   footerBg: "#dbdbdb",
   footerIcon: "#6d6e71",
   footerIconBg: "#f3f3f4"

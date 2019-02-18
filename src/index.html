@@ -62,11 +62,32 @@
               ></a>
             </li>
           </ul>
-          <!-- Responsize Nav List mobile size -->
+          <!-- Responsivness mobile size - HAMBURGER -->
+          <div class="hamburger inactive-ham">
+            <div class="hamburger-stroke"></div>
+          </div>
+
           <span class="search-btn"><i class="fas fa-search"></i></span>
         </nav>
       </header>
 
+      <!-- Start Responsivne Nav List mobile size -->
+      <ul class="nav-list-mob-size">
+        <li class="nav-item home-item">
+          <a class="home" target="_blank" href="#home">home</a>
+        </li>
+        <li class="nav-item about-us-item">
+          <a class="about-us" target="_blank" href="#about-us">about us</a>
+        </li>
+        <li class="nav-item our-work-item">
+          <a class="our-work" target="_blank" href="#our-work">our work</a>
+        </li>
+        <li class="nav-item contact-item">
+          <a class="contact" target="_blank" href="#contact">contact</a>
+        </li>
+      </ul>
+
+      <!-- End Responsivne Nav List mobile size -->
       <div class="search-input-div">
         <input class="search-input" name="search-input" type="text" />
       </div>
@@ -74,6 +95,7 @@
       <div class="border-div"></div>
 
       <main id="swiper-section">
+        <!-- Swiper Normal -->
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -106,6 +128,52 @@
           </div>
           <!-- Add Pagination -->
           <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Swiper Mobile Responsive -->
+        <div class="swiper-container-mob-responsive">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="slide-img-wrapper">
+                <img
+                  src="../src/img/slider/slider_connections_icon.png"
+                  alt="connections"
+                />
+              </div>
+              <div class="slide-text-wrapper">
+                <div class="text">lorem ipsum dolor sit</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-img-wrapper">
+                <img
+                  src="../src/img/slider/slider_connections_icon.png"
+                  alt="connections"
+                />
+              </div>
+              <div class="slide-text-wrapper">
+                <div class="text">lorem ipsum dolor sit</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-img-wrapper">
+                <img
+                  src="../src/img/slider/slider_connections_icon.png"
+                  alt="connections"
+                />
+              </div>
+              <div class="slide-text-wrapper">
+                <div class="text">lorem ipsum dolor sit</div>
+              </div>
+            </div>
+          </div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-prev-altered">
+            <i class="fa fa-chevron-left"></i>
+          </div>
+          <div class="swiper-button-next-altered">
+            <i class="fa fa-chevron-right"></i>
+          </div>
         </div>
       </main>
 
@@ -193,7 +261,7 @@
               <a class="contact" target="_blank" href="#contact">contact</a>
             </li>
           </ul>
-          <a href="#" class="scroll-top-btn"
+          <a href="#header" class="scroll-top-btn"
             ><i class="fas fa-long-arrow-alt-up"></i
           ></a>
         </nav>

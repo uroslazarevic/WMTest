@@ -32,6 +32,7 @@ $footerIconBg: #f3f3f4;
     width: 768px;
     margin: 0 auto;
 
+    // Header Section
     #header {
       display: flex;
       padding: 18px 33px 18px 30px;
@@ -139,6 +140,7 @@ $footerIconBg: #f3f3f4;
     }
   }
 
+  // Swiper Section
   #swiper-section {
     .swiper-container {
       width: 100%;
@@ -201,16 +203,44 @@ $footerIconBg: #f3f3f4;
     }
   }
 
+  %section-title {
+    font-size: 30px;
+    text-transform: uppercase;
+    padding-bottom: 11px;
+    color: $title;
+    width: 440px;
+    margin: 0 auto;
+  }
+
+  %block-image {
+    height: 115px;
+    width: 190px;
+    background-color: $sectionPictureBg;
+    display: block;
+    position: relative;
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: $sectionPicture;
+      left: 50%;
+      font-size: 48px;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  // Who We Are Section
   #who-we-are {
     padding: 50px 0;
 
     .section-title {
-      font-size: 30px;
-      text-transform: uppercase;
-      padding-bottom: 11px;
-      color: $title;
-      width: 440px;
-      margin: 0 auto;
+      @extend %section-title;
     }
 
     .section-content {
@@ -223,30 +253,11 @@ $footerIconBg: #f3f3f4;
         display: flex;
 
         .block-image {
-          margin-right: 50px;
-          height: 115px;
-          width: 190px;
-          background-color: $sectionPictureBg;
-          display: block;
-          position: relative;
-
-          i {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            color: $sectionPicture;
-            left: 50%;
-            font-size: 48px;
-            transform: translate(-50%, -50%);
-            cursor: pointer;
-
-            &:hover {
-              color: $primary;
-            }
-          }
+          @extend %block-image;
         }
 
         .block-content {
+          margin-left: 50px;
           width: 200px;
           display: flex;
           flex-direction: column;
@@ -291,6 +302,27 @@ $footerIconBg: #f3f3f4;
             }
           }
         }
+      }
+    }
+  }
+
+  // What We Do Section
+  section#what-we-do {
+    padding-bottom: 80px;
+
+    .section-title {
+      @extend %section-title;
+    }
+
+    .section-content {
+      display: grid;
+      grid-template-columns: repeat(2, 190px);
+      grid-gap: 50px;
+      justify-items: center;
+      justify-content: center;
+
+      .block-image {
+        @extend %block-image;
       }
     }
   }

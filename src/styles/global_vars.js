@@ -7,6 +7,7 @@ export default {
   swiperPaginationBullet: "#bababa",
   title: "#757575",
   headerText: "#a1a3a6",
+  headerResIcon: "#bababa",
   sectionContentText: "#959595",
   $sectionPicture: "#9d9d9c",
   $sectionPictureBg: "#e9e9e9",

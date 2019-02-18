@@ -21,6 +21,7 @@
       <header id="header">
         <img class="logo" src="../src/img/logo.png" alt="logo" />
         <nav class="navigation">
+          <!-- Normal Nav List size -->
           <ul class="nav-list">
             <li class="nav-item">
               <a class="home" target="_blank" href="#home">home</a
@@ -38,6 +39,30 @@
               <a class="contact" target="_blank" href="#contact">contact</a>
             </li>
           </ul>
+          <!-- Responsize Nav List tablet size -->
+          <ul class="nav-list-tablet-size">
+            <li class="nav-item">
+              <a class="home" target="_blank" href="#home"
+                ><i class="fas fa-home"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="about-us" target="_blank" href="#about-us"
+                ><i class="fas fa-question-circle"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="our-work" target="_blank" href="#our-work"
+                ><i class="fas fa-graduation-cap"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="contact" target="_blank" href="#contact"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </li>
+          </ul>
+          <!-- Responsize Nav List mobile size -->
           <span class="search-btn"><i class="fas fa-search"></i></span>
         </nav>
       </header>
@@ -88,44 +113,63 @@
         <div class="section-title">who we are</div>
         <div class="section-content">
           <div class="info-block">
-            <span class="block-image"
-              ><i class="fas fa-graduation-cap"></i
-            ></span>
+            <span class="block-image">
+              <a href="#who-we-are" target="_blank"
+                ><i class="fas fa-graduation-cap"></i
+              ></a>
+            </span>
             <div class="block-content">
               <div class="block-title">Lorem, ipsum.</div>
               <div class="block-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Asperiores, sequi.
               </div>
-              <div class="show-more">
-                <a href="#show-more" target="_blank">Show more</a>
-              </div>
+              <a class="show-more" href="#show-more" target="_blank"
+                >Show more</a
+              >
             </div>
           </div>
           <div class="info-block">
-            <span class="block-image"><i class="fas fa-thumbs-up"></i></span>
+            <span class="block-image">
+              <a href="#who-we-are" target="_blank"
+                ><i class="fas fa-thumbs-up"></i
+              ></a>
+            </span>
             <div class="block-content">
               <div class="block-title">Lorem, ipsum.</div>
               <div class="block-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Asperiores, sequi.
               </div>
-              <div class="show-more">
-                <a href="#show-more" target="_blank">Show more</a>
-              </div>
+              <a class="show-more" href="#show-more" target="_blank"
+                >Show more</a
+              >
             </div>
           </div>
         </div>
       </section>
 
       <section id="what-we-do">
-          <div class="section-title">what we do</div>
-          <div class="section-content">
-              <span class="block-image"><i class="fas fa-calculator"></i></span>
-              <span class="block-image"><i class="fas fa-cloud"></i></i></span>
-              <span class="block-image"><i class="far fa-clock"></i></span>
-              <span class="block-image"><i class="fas fa-heart"></i></span>
-          </div>
+        <div class="section-title">what we do</div>
+        <div class="section-content">
+          <span class="block-image">
+            <a href="#what-we-do" target="_blank"
+              ><i class="fas fa-calculator"></i
+            ></a>
+          </span>
+          <span class="block-image"
+            ><a href="#what-we-do" target="_blank"
+              ><i class="fas fa-cloud"></i></a
+          ></span>
+          <span class="block-image"
+            ><a href="#what-we-do" target="_blank"
+              ><i class="far fa-clock"></i></a
+          ></span>
+          <span class="block-image"
+            ><a href="#what-we-do" target="_blank"
+              ><i class="fas fa-heart"></i></a
+          ></span>
+        </div>
       </section>
 
       <footer id="footer">
@@ -135,24 +179,25 @@
           <a href="" class="email"><i class="fas fa-envelope"></i></a>
         </div>
         <nav class="navigation">
-            <ul class="nav-list">
-              <li class="nav-item">
-                <a class="home" target="_blank" href="#home">home</a>
-              </li>
-              <li class="nav-item">
-                <a class="about-us" target="_blank" href="#about-us">about us</a>
-              </li>
-              <li class="nav-item">
-                <a class="our-work" target="_blank" href="#our-work">our work</a>
-              </li>
-              <li class="nav-item">
-                <a class="contact" target="_blank" href="#contact">contact</a>
-              </li>
-            </ul>
-            <a href="#" class="scroll-top-btn"><i class="fas fa-long-arrow-alt-up"></i></a>
-          </nav>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a class="home" target="_blank" href="#home">home</a>
+            </li>
+            <li class="nav-item">
+              <a class="about-us" target="_blank" href="#about-us">about us</a>
+            </li>
+            <li class="nav-item">
+              <a class="our-work" target="_blank" href="#our-work">our work</a>
+            </li>
+            <li class="nav-item">
+              <a class="contact" target="_blank" href="#contact">contact</a>
+            </li>
+          </ul>
+          <a href="#" class="scroll-top-btn"
+            ><i class="fas fa-long-arrow-alt-up"></i
+          ></a>
+        </nav>
       </footer>
-      
     </div>
   </body>
 </html>

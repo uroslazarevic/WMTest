@@ -61,27 +61,23 @@ $footerIconBg: #f3f3f4;
 
               &.home:hover,
               &.home:active,
-              &.home:focus,
-              &.home:visited {
+              &.home:focus {
                 color: $primary;
               }
               &.about-us:hover,
               &.about-us:active,
-              &.about-us:focus,
-              &.about-us:visited {
+              &.about-us:focus {
                 color: $secondary;
               }
 
               &.our-work:hover,
               &.our-work:active,
-              &.our-work:focus,
-              &.our-work:visited {
+              &.our-work:focus {
                 color: $tertiary;
               }
               &.contact:hover,
               &.contact:active,
-              &.contact:focus,
-              &.contact:visited {
+              &.contact:focus {
                 color: $quaternary;
               }
             }
@@ -99,8 +95,7 @@ $footerIconBg: #f3f3f4;
 
           &:hover,
           &:active,
-          &:focus,
-          &:visited {
+          &:focus {
             i {
               color: $primary;
             }
@@ -323,6 +318,108 @@ $footerIconBg: #f3f3f4;
 
       .block-image {
         @extend %block-image;
+      }
+    }
+  }
+
+  // Footer Section
+  #footer {
+    display: flex;
+    padding: 12px 38px;
+    margin-bottom: 18px;
+    background: $footerBg;
+
+    %iconBg {
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      border: none;
+      background: $footerIconBg;
+      position: relative;
+
+      &:hover {
+        i {
+          color: $primary;
+        }
+      }
+    }
+
+    %icon {
+      position: absolute;
+      color: $footerIcon;
+      top: 50%;
+      font-size: 22px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .social-icons {
+      display: flex;
+      margin-right: 50px;
+
+      a {
+        @extend %iconBg;
+
+        &:nth-child(-n + 2) {
+          margin-right: 20px;
+        }
+
+        i {
+          @extend %icon;
+        }
+      }
+    }
+
+    .navigation {
+      display: flex;
+      width: 100%;
+      align-items: center;
+
+      ul {
+        display: flex;
+
+        .nav-item {
+          font-size: 14px;
+          text-transform: uppercase;
+          &:nth-child(-n + 3) {
+            padding-right: 10px;
+          }
+
+          a {
+            color: $title;
+
+            &.home:hover,
+            &.home:active,
+            &.home:focus {
+              color: $primary;
+            }
+            &.about-us:hover,
+            &.about-us:active,
+            &.about-us:focus {
+              color: $secondary;
+            }
+
+            &.our-work:hover,
+            &.our-work:active,
+            &.our-work:focus {
+              color: $tertiary;
+            }
+            &.contact:hover,
+            &.contact:active,
+            &.contact:focus {
+              color: $quaternary;
+            }
+          }
+        }
+      }
+
+      .scroll-top-btn {
+        margin-left: auto;
+        @extend %iconBg;
+
+        i {
+          @extend %icon;
+        }
       }
     }
   }

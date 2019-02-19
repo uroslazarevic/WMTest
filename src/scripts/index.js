@@ -2,7 +2,6 @@ import "../styles/index.scss";
 import App from "./app";
 
 const app = new App();
-console.log("APP:", app);
 
 window.addEventListener("load", function() {
   app.initializeSwiper();
@@ -11,6 +10,10 @@ window.addEventListener("load", function() {
 
 document
   .querySelector("#header")
-  .addEventListener("click", e => app.handleHeaderClickEvent(e));
+  .addEventListener("click", app.handleHeaderClickEvent);
+
+document
+  .querySelector(".scroll-top-btn")
+  .addEventListener("click", app.scrollOnTop);
 
 console.log("webkit starter pack");

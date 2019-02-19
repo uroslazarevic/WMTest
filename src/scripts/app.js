@@ -1,5 +1,5 @@
 import Swiper from "swiper/dist/js/swiper.min.js";
-import colors from "../styles/global_vars";
+import styles from "../styles/index.scss";
 
 export default class App {
   constructor() {
@@ -20,49 +20,75 @@ export default class App {
   }
 
   initializeSwiperMobResponsive() {
-    const mySwiper = new Swiper(".swiper-container-mob-responsive", {
+    new Swiper(".swiper-container-mob-responsive", {
+      speed: 300,
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
+        nextEl: ".swiper-button-next-altered",
+        prevEl: ".swiper-button-prev-altered"
       }
     });
-
-    document
-      .querySelector(".swiper-button-next-altered")
-      .addEventListener("click", () => {
-        console.log("CLICK");
-        mySwiper.slideNext(300, true);
-      });
-
-    document
-      .querySelector(".swiper-button-prev-altered")
-      .addEventListener("click", () => {
-        console.log("CLICK");
-        mySwiper.slidePrev(400, true);
-      });
   }
 
-  handleHeaderClickEvent(e) {
-    const target = e.target;
+  animateSearchInput() {
     const searchInput = document.querySelector(".search-input-div");
+    const searchBtn = document.querySelector(".search-btn i");
+    const primary = styles.primary;
+
+    if (window.innerWidth > 768) {
+      searchBtn.style.color = primary;
+      searchInput.style.padding = "0px 33px 9px 30px";
+      searchInput.style.height = "34px";
+    } else {
+      searchBtn.style.color = primary;
+      searchInput.style.padding = "3px 22px 9px 22px";
+      searchInput.style.height = "37px";
+    }
+  }
+
+  disanimateSearchInput() {
+    const searchInput = document.querySelector(".search-input-div");
+    const searchBtn = document.querySelector(".search-btn i");
+    const headerText = styles.headerText;
+
+    if (window.innerWidth > 768) {
+      searchInput.style.padding = "0px 33px 0px 30px";
+    } else {
+      searchInput.style.padding = "0px 22px 0px 22px";
+    }
+    searchBtn.style.color = headerText;
+    searchInput.style.height = "0px";
+  }
+
+  animateMobileNav() {
     const mobileNav = document.querySelector(".nav-list-mob-size");
     const borderDiv = document.querySelector(".border-div");
 
+    borderDiv.style.height = "0px";
+    mobileNav.style.height = "125px";
+  }
+
+  disanimateMobileNav() {
+    const mobileNav = document.querySelector(".nav-list-mob-size");
+    const borderDiv = document.querySelector(".border-div");
+
+    borderDiv.style.height = "8px";
+    mobileNav.style.height = "0px";
+  }
+
+  handleHeaderClickEvent = e => {
+    const target = e.target;
+
     // Handle search-btn click
     if (target.classList.contains("search-btn")) {
-      const searchBtn = target.childNodes[0];
       document.querySelector(".hamburger").className = "hamburger inactive-ham";
-      borderDiv.style.display = "block";
-      mobileNav.style.height = "0px";
+      this.disanimateMobileNav();
       this._hamburger = false;
 
       if (!this._search) {
-        searchBtn.style.color = colors.primary;
-        searchInput.style.display = "block";
+        this.animateSearchInput();
         this._search = true;
       } else {
-        searchBtn.style.color = colors.headerText;
-        searchInput.style.display = "none";
+        this.disanimateSearchInput();
         this._search = false;
       }
     }
@@ -70,23 +96,35 @@ export default class App {
     // Handle mobile navigation
     if (target.classList.contains("hamburger")) {
       // Deactivate search-btn & search-input if active
-      document.querySelector(".search-btn").childNodes[0].style.color =
-        colors.headerText;
-      searchInput.style.display = "none";
+      this.disanimateSearchInput();
       this._search = false;
-      console.log("TARGET:", target);
 
       if (!this._hamburger) {
         target.className = "hamburger active-ham";
-        borderDiv.style.display = "none";
-        mobileNav.style.height = "125px";
+        this.animateMobileNav();
         this._hamburger = true;
       } else {
         target.className = "hamburger inactive-ham";
-        borderDiv.style.display = "block";
-        mobileNav.style.height = "0px";
+        this.disanimateMobileNav();
         this._hamburger = false;
       }
     }
+  };
+
+  scrollOnTop(e) {
+    const currPos = e.target.offsetTop;
+    const top = document.body.scrollTop;
+    let count = 0;
+    let offset = 0;
+
+    const scrollInterval = setInterval(function() {
+      count += count < 700 ? 35 : 20;
+      offset = currPos - count;
+      document.body.scrollTop = currPos;
+      window.scrollTo(0, offset);
+      if (offset <= top) {
+        clearInterval(scrollInterval);
+      }
+    }, 10);
   }
 }

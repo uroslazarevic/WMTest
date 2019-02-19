@@ -28,8 +28,9 @@ $footerBg: #dbdbdb;
 $footerIcon: #6d6e71;
 $footerIconBg: #f3f3f4;
 
-html {
-  scroll-behavior: smooth;
+:export {
+  primary: $primary;
+  headerText: $headerText;
 }
 
 .container {
@@ -127,8 +128,10 @@ html {
   }
 
   .search-input-div {
-    display: none;
-    padding: 0px 33px 9px 30px;
+    transition: all ease 0.25s;
+    overflow: hidden;
+    height: 0px;
+    padding: 0px 33px 0px 30px;
     input {
       height: 25px;
       line-height: 25px;
@@ -141,6 +144,7 @@ html {
   }
 
   .border-div {
+    transition: height ease 0.3s;
     height: 8px;
     width: 100%;
     background: linear-gradient(
@@ -445,6 +449,7 @@ section#what-we-do {
 
       i {
         @extend %icon;
+        pointer-events: none;
       }
     }
   }
@@ -533,7 +538,7 @@ section#what-we-do {
     }
 
     .search-input-div {
-      padding: 3px 22px 9px 22px;
+      padding: 0px 22px 0px 22px;
     }
 
     // Swiper Section
@@ -667,11 +672,16 @@ section#what-we-do {
       transition: height ease 0.25s;
 
       .nav-item {
-        padding: 6px 13px;
         margin-bottom: 1px;
         text-transform: uppercase;
 
+        &:hover {
+          opacity: 0.9;
+        }
+
         a {
+          padding: 6px 13px;
+          display: block;
           color: #fff;
         }
 
@@ -748,6 +758,10 @@ section#what-we-do {
           position: absolute;
           bottom: 24px;
           z-index: 99;
+          &:focus {
+            outline: none;
+          }
+
           i {
             color: $sectionPictureBg;
           }
